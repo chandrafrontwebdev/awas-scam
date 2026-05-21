@@ -1,0 +1,260 @@
+/* =========================================
+   STYLE.CSS - AWAS-SCAM! (NEOBRUTALISM)
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: #e8e8e8;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* MAIN WRAPPER */
+#app-viewport {
+    width: 100%;
+    max-width: 550px;
+    background-color: #fff;
+    border: 4px solid #000;
+    box-shadow: 10px 10px 0px #000;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* HEADER SECTOR */
+#header-sector {
+    text-align: center;
+    background-color: #ffde59; /* Kuning Mentereng */
+    margin: -20px -20px 20px -20px;
+    padding: 20px;
+    border-bottom: 4px solid #000;
+    border-radius: 4px 4px 0 0;
+}
+
+#header-sector h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* INPUT SECTOR */
+#input-zone {
+    margin-bottom: 25px;
+}
+
+.tab-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    border: 3px solid #000;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000;
+    transition: all 0.1s ease-in-out;
+}
+
+.tab-btn.active {
+    background-color: #00bf63; /* Hijau Terang */
+    color: #fff;
+}
+
+.tab-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* TEXT AREA */
+#message-input {
+    width: 100%;
+    height: 120px;
+    border: 3px solid #000;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    resize: none;
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f4f4f4;
+}
+
+#message-input:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: #ff3131;
+}
+
+/* IMAGE UPLOAD AREA */
+#image-input-area {
+    border: 4px dashed #000;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+#image-preview {
+    max-width: 100%;
+    margin-top: 15px;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+}
+
+/* MAIN BUTTON */
+.action-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    background-color: #ff3131; /* Merah Peringatan */
+    color: #fff;
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0px #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.1s;
+}
+
+.action-btn:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0px 0px 0px #000;
+}
+
+/* RESULT SECTOR */
+#result-zone {
+    border: 4px solid #000;
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    box-shadow: 5px 5px 0px #000;
+}
+
+#result-zone h2 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.status-box {
+    padding: 15px;
+    border: 3px solid #000;
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.status-box.standby { background-color: #e0e0e0; }
+.status-box.safe { background-color: #00bf63; color: white; }
+.status-box.danger { 
+    background-color: #ff3131; 
+    color: white; 
+    animation: flash 1s infinite; 
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+#ocr-loading {
+    margin-top: 15px;
+    font-weight: bold;
+    background-color: #ffde59;
+    padding: 10px;
+    border: 3px solid #000;
+    text-align: center;
+}
+
+#extracted-text-display {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #000;
+    color: #00bf63; /* Warna Terminal Hijau */
+    font-family: monospace;
+    font-size: 0.9rem;
+    border: 3px solid #000;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* DATA STRUCTURE SECTOR (THE LIFO STACK) */
+#threat-board-zone {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    border: 4px solid #000;
+    margin: 20px -20px -20px -20px;
+    border-radius: 0 0 4px 4px;
+}
+
+#threat-board-zone h2 {
+    color: #ff3131;
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+#threat-board-zone .desc {
+    color: #aaa;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+#threat-stack-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Ini wujud dari data di dalam Array yang di-push */
+.stack-card {
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #ff3131;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-left: 10px solid #ff3131;
+    box-shadow: 4px 4px 0px #000;
+    word-wrap: break-word;
+}
+
+.stack-card.empty-msg {
+    border-color: #555;
+    border-left: 10px solid #555;
+    color: #888;
+    background-color: #2a2a2a;
+    box-shadow: none;
+    text-align: center;
+}

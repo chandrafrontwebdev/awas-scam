@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AwasScam! // Scanner Penipuan Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+    <main id="app-viewport">
+        <header id="header-sector">
+            <h1>AWAS-SCAM! 🛡️</h1>
+            
+            <div class="sub-header-flexbox" style="display: flex; gap: 15px; justify-content: center; align-items: center; margin-top: 15px;">
+                
+                <p class="badge header-item" style="flex: 1; max-width: 300px; display: inline-block; background-color: #000; color: #fff; padding: 5px 12px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin: 0; box-shadow: 4px 4px 0px #fff;">
+                    TEKS & GAMBAR SCANNER // AI ENGINE
+                </p>
+
+                <div id="stats-counter" class="header-item" style="flex: 1; max-width: 250px; background: #000; color: #ffde59; padding: 8px 12px; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; border: 2px solid #fff; box-shadow: 4px 4px 0px #ff3131;">
+                    🛡️ Total Ancaman: <span id="scam-count" style="font-size: 1.1rem; color: #fff;">0</span>
+                </div>
+
+            </div>
+        </header>
+
+        <nav id="main-nav" class="tab-controls" style="margin-bottom: 20px;">
+            <button id="nav-scanner" class="tab-btn active">🔍 SCANNER</button>
+            <button id="nav-history" class="tab-btn">🗄️ RIWAYAT</button>
+        </nav>
+
+        <div id="page-scanner">
+            <section id="input-zone">
+                <div class="tab-controls">
+                    <button id="tab-text" class="tab-btn active">📝 Teks</button>
+                    <button id="tab-image" class="tab-btn">📸 Gambar</button>
+                </div>
+                <div id="text-input-area" class="input-panel">
+                    <textarea id="message-input" placeholder="Paste pesan mencurigakan di sini... (Contoh: Buka link resi paket .apk ini)"></textarea>
+                </div>
+                <div id="image-input-area" class="input-panel hidden">
+                    <input type="file" id="image-upload" accept="image/png, image/jpeg, image/webp">
+                    <div id="image-preview-box">
+                        <p id="preview-text">Preview Gambar Akan Muncul Di Sini</p>
+                        <img id="image-preview" src="" alt="Preview" style="display:none;">
+                    </div>
+                </div>
+                <button id="btn-scan" class="action-btn">SCAN SEKARANG 🚨</button>
+            </section>
+
+            <section id="result-zone">
+                <h2>HASIL ANALISIS:</h2>
+                <div id="scan-status" class="status-box standby">
+                    MENUNGGU INPUT...
+                </div>
+                
+                <div id="detected-keyword-display" class="hidden" style="background-color: #000; color: #ffde59; padding: 15px; margin-top: 15px; border: 3px dashed #ff3131; font-weight: bold; text-align: center; font-size: 1.1rem; text-transform: uppercase;"></div>
+                
+                <a id="btn-share-wa" href="#" target="_blank" class="hidden action-btn" style="background-color: #25D366; color: white; margin-top: 15px; text-decoration: none; display: block; text-align: center; font-size: 1.1rem; border-color: #000;">📲 PERINGATKAN VIA WHATSAPP</a>
+
+                <div id="ocr-loading" class="hidden">🤖 AI Sedang Membaca Gambar... Harap Tunggu.</div>
+                <div id="extracted-text-display" class="hidden"></div>
+            </section>
+        </div>
+
+        <div id="page-history" class="hidden">
+            <section id="threat-board-zone" style="margin: 0; border-radius: 4px;">
+                <h2>💀 DATABASE KARANTINA</h2>
+                <p class="desc">Seluruh modus penipuan yang berhasil ditangkap oleh sistem disimpan di sini.</p>
+                <button id="btn-clear-history" class="action-btn" style="background-color: #000; font-size: 1rem; margin-bottom: 15px;">🗑️ KOSONGKAN RIWAYAT</button>
+                <div id="threat-stack-container">
+                    <div class="stack-card empty-msg">Riwayat ancaman masih kosong.</div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
